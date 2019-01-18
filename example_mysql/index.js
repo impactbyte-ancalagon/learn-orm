@@ -11,12 +11,5 @@ connection.execute("SELECT * FROM `users`", function(err, results, fields) {
   results.forEach(item => {
     console.log(item)
   })
+  console.log(fields)
 })
-
-connection.execute("SELECT * FROM `todos`", function(err, results, fields) {
-  results.forEach(item => {
-    console.log(item)
-  })
-})
-
-// ALTER USER 'haidar'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Notpassword!0';
