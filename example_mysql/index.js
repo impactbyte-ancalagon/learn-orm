@@ -1,4 +1,4 @@
-const mysql = require("mysql")
+const mysql = require("mysql2")
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -7,13 +7,13 @@ const connection = mysql.createConnection({
   database: "todo_app"
 })
 
-connection.query("SELECT * FROM `users`", function(err, results, fields) {
+connection.execute("SELECT * FROM `users`", function(err, results, fields) {
   results.forEach(item => {
     console.log(item)
   })
 })
 
-connection.query("SELECT * FROM `todos`", function(err, results, fields) {
+connection.execute("SELECT * FROM `todos`", function(err, results, fields) {
   results.forEach(item => {
     console.log(item)
   })
