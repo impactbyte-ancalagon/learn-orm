@@ -29,4 +29,19 @@ router.get("/", (req, res) => {
   })
 })
 
+router.post("/", (req, res) => {
+  const newUser = {
+    email: req.body.email,
+    password: req.body.password,
+    username: req.body.username,
+    name: req.body.name
+  }
+
+  User.create(newUser).then(data => {
+    res.send({
+      data
+    })
+  })
+})
+
 module.exports = router
