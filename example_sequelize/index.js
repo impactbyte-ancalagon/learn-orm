@@ -29,3 +29,9 @@ User.sync({ force: true }).then(() => {
     console.log(data.user)
   })
 })
+
+User.findAll({
+  raw: true
+}).then(users => {
+  console.log(users)
+})
